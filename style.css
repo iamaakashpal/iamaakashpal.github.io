@@ -57,7 +57,7 @@ nav ul li a:hover::after{
 }
 .header-text{
     margin-top:20%;
-    font-size: 30px;
+    font-size: 25px;
 }
 .header-text h1{
     font-size:60px;
@@ -329,7 +329,7 @@ nav .fa-solid{
     }
     .header-text{
         margin-top: 100%;
-        font-size: 16px;
+        font-size: 17px;
     }
     .header-text h1{
         font-size: 30px;
