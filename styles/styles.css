@@ -44,7 +44,7 @@
 
 :root {
   --color-primary: #191d2b;
-  --color-secondary: #27AE60;
+  --color-secondary: #F56692;
   --color-secondary2: #27AE60;
   --color-white: #FFFFFF;
   --color-black: #000;
@@ -76,7 +76,10 @@
 
 body {
   background-color: var(--color-primary);
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
+  font-family: 'Comic Sans MS', cursive;
+  /* font-weight: bold; */
+  /* font-style: italic; */
   font-size: 1.1rem;
   color: var(--color-white);
   transition: all 0.4s ease-in-out;
@@ -261,6 +264,7 @@ section {
   border-radius: 5px;
   transition: all 0.4s ease-in-out;
   box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-secondary);
 }
 .about-container .right-about .about-item:hover {
   cursor: default;
