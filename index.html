@@ -74,7 +74,7 @@
                     </p> -->
                     <p>
                         A committed professional with a strong foundation in Machine Learning gained experienced 
-                        over 1.3 years of immersive internship. Backed by 1.10 years of Technical Customer Support involvement,
+                        over 1.5 years of immersive internship. Backed by 1.10 years of Technical Customer Support involvement,
                          showcasing adapt troubleshooting abilities and effective communication. Driven by an authentic enthusiasm 
                          for data-driven solutions, I aim to excel in a Machine Learning role and make impactful contributions to
                           a team dedicated to innovation and cutting-edge technologies.
@@ -567,7 +567,7 @@
                         <!-- <img src="img/port3.jpg" alt=""> -->
                         <div class="blog-text">
                             <h4>
-                                <i class="fa-solid fa-table"></i>  Web Scrapper
+                                <i class="fa-solid fa-table"></i>  Website Scrapper
                             </h4>
                             <p>
                                 I specialize in web scraping to extract valuable data from the internet. With expertise in Python, 
@@ -659,15 +659,15 @@
                                 <a href="https://www.linkedin.com/in/iamaakashpal/" target="_blank" rel="noopener noreferrer">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
-                                <!-- <a href="#" target="_blank" rel="noopener noreferrer">
-                                    <i class="fab fa-twitter"></i>
-                                </a> -->
                                 <a href="https://github.com/iamaakashpal" target="_blank" rel="noopener noreferrer">
                                     <i class="fab fa-github"></i>
                                 </a>
                                 <a href="https://www.youtube.com/channel/UCYBlRxDjQSFtst6WnjcXsqQ" target="_blank" rel="noopener noreferrer">
                                     <i class="fab fa-youtube"></i>
                                 </a>
+                                <a href="https://iamaakashpal.medium.com/" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-medium"></i>
+                                </a> 
                             </div>
                         </div>
                     </div>
@@ -684,7 +684,7 @@
                                 <textarea name="Message" id="" cols="15" rows="8" placeholder="Message Here..."></textarea>
                             </div>
                             <div class="submit-btn">
-                                <a href="#"  type="submit" class="main-btn">
+                                <a type="submit" class="main-btn">
                                     <!-- <span  class="btn-text"></span> -->  
                                     <button type="submit" class="su-button">Submit</button>
                                     <!-- <span class="btn-icon"><i class="fa-solid fa-paper-plane"></i></span></a>                                    -->
@@ -719,8 +719,8 @@
         <i class="fas fa-adjust"></i>
     </div>
     <script src="app.js"></script>
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwHM89MI3WQlw9oMuKm5ufxP6cZkFwkEkG2WlwSaQ5HfcU14JLqtfII7CFJpm6Wj22eAw/exec'
+    <!-- <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzTL8SZsheagvkNmxzWk0q7sUq9H4KY-QmHNgPjl_Gw8I8tcGEVL8mw5yjxYU50vbQpag/exec'
         const form = document.forms['submit-to-google-sheet']
         const msg = document.getElementById("msg")
       
@@ -736,6 +736,28 @@
             })
             .catch(error => console.error('Error!', error.message))
         })
-      </script>
+      </script> -->
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzTL8SZsheagvkNmxzWk0q7sUq9H4KY-QmHNgPjl_Gw8I8tcGEVL8mw5yjxYU50vbQpag/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault();
+          msg.innerHTML = "Message Sent Successfully"; // Show message immediately
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                setTimeout(function(){
+                    msg.innerHTML = ""; // Clear the message after a delay
+                }, 500);
+                form.reset();
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                msg.innerHTML = "Message Sent Failed"; // Show an error message
+            });
+        })
+    </script>
+    
 </body>
 </html>
